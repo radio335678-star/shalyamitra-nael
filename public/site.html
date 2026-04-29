@@ -3773,11 +3773,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
   }
   window.qxCloseLightbox = function(e){
-    if(e && e.target && e.target.tagName === 'IMG' && e.target.id === 'qxLightboxImg') return;
+    // Close on ANY click inside the lightbox (image, backdrop, close button)
     document.getElementById('qxLightbox').classList.remove('active');
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   };
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.qxCloseLightbox(); });
+  // Safety net: if lightbox is not active but body is locked, unlock it
+  setInterval(function(){
+    var lb = document.getElementById('qxLightbox');
+    var navOpen = document.getElementById('main-nav') && document.getElementById('main-nav').classList.contains('nav-mobile-open');
+    if(lb && !lb.classList.contains('active') && !navOpen && document.body.style.overflow === 'hidden'){
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+  }, 1000);
 
   function audit(){
     var imgs = document.querySelectorAll('img');
