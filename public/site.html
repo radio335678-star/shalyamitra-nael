@@ -1918,6 +1918,23 @@ html,body{overflow-x:hidden;}
   .count-label{font-size:9px;}
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="preload" as="image" href="/images/quaasx_logo.webp" fetchpriority="high">
+<meta name="format-detection" content="telephone=no">
+<style>
+/* Performance: contain offscreen sections + smooth GPU compositing */
+section, .section, footer { content-visibility: auto; contain-intrinsic-size: 1px 800px; }
+img { image-rendering: -webkit-optimize-contrast; }
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+/* Avoid layout shift on lazy media */
+img[loading="lazy"]{background:rgba(255,255,255,.02)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior-y:none}
+</style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
 
@@ -1927,7 +1944,7 @@ html,body{overflow-x:hidden;}
 <!-- ═══════════════ NAVIGATION -->
 <nav id="main-nav" role="navigation" aria-label="Main navigation">
   <div class="nav-brand" onclick="showPage('home')">
-    <img src="images/quaasx_logo.jpg" alt="QuaasX 108 Logo" class="nav-logo">
+    <img src="images/quaasx_logo.webp" alt="QuaasX 108 Logo" class="nav-logo" width="48" height="48" loading="eager" decoding="async" fetchpriority="high">
     <div class="nav-brand-text">
       <div class="main">QuaasX 108</div>
       <div class="sub">DPIIT · NVIDIA Inception</div>
@@ -1983,7 +2000,7 @@ html,body{overflow-x:hidden;}
       <span style="color:var(--neon-blue);text-shadow:0 0 10px var(--neon-blue-glow),0 0 20px var(--neon-blue-soft),0 0 40px var(--neon-blue-glow);">World's First Robotic Surgery in Ayurveda Shalyatantra · AI Ayurvedic Surgical hybrid-Intelligence (Sushruta Copilot)</span>
     </div>
     <h1 class="hero-title" itemprop="name" style="margin:20px 0;">
-      <img src="images/quaasx_logo.jpg" alt="QuaasX 108" style="max-width:min(700px,90vw);height:auto;filter:drop-shadow(0 0 40px rgba(255,215,0,0.5));margin:0 auto;display:block;">
+      <img src="images/quaasx_logo.webp" alt="QuaasX 108" style="max-width:min(700px,90vw);height:auto;filter:drop-shadow(0 0 40px rgba(255,215,0,0.5));margin:0 auto;display:block;" loading="eager" decoding="async" fetchpriority="high" width="700" height="700">
     </h1>
 
     <!-- SAMARANGANA SUTRADHARA SHLOKAS -->
@@ -2029,19 +2046,19 @@ html,body{overflow-x:hidden;}
     <!-- ACCREDITATIONS LOGOS -->
     <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:40px;animation:fadeUp .9s ease .9s both;">
       <div style="display:flex;align-items:center;gap:16px;padding:20px 28px;background:linear-gradient(135deg,var(--surface) 0%,var(--deep) 100%);border:1px solid var(--border-md);border-radius:var(--radius);box-shadow:0 4px 24px rgba(0,0,0,.4),0 0 20px var(--gold-soft);transition:all .3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 32px rgba(0,0,0,.5),0 0 30px var(--gold-glow),0 0 50px var(--neon-blue-soft)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(0,0,0,.4),0 0 20px var(--gold-soft)';">
-        <img src="images/dpiit.png" alt="DPIIT Certified" style="width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));">
+        <img src="images/dpiit.webp" alt="DPIIT Certified" style="width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));" loading="lazy" decoding="async">
         <span style="font-size:12px;color:var(--text-1);font-weight:500;letter-spacing:.5px;">DPIIT Certified</span>
       </div>
       <div style="display:flex;align-items:center;gap:16px;padding:20px 28px;background:linear-gradient(135deg,var(--surface) 0%,var(--deep) 100%);border:1px solid var(--border-md);border-radius:var(--radius);box-shadow:0 4px 24px rgba(0,0,0,.4),0 0 20px var(--gold-soft);transition:all .3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 32px rgba(0,0,0,.5),0 0 30px var(--gold-glow),0 0 50px var(--neon-blue-soft)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(0,0,0,.4),0 0 20px var(--gold-soft)';">
-        <img src="images/download.png" alt="NVIDIA Inception" style="width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));">
+        <img src="images/download.webp" alt="NVIDIA Inception" style="width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));" loading="lazy" decoding="async">
         <span style="font-size:12px;color:var(--text-1);font-weight:500;letter-spacing:.5px;">NVIDIA Inception</span>
       </div>
       <div style="display:flex;align-items:center;gap:16px;padding:20px 28px;background:linear-gradient(135deg,var(--surface) 0%,var(--deep) 100%);border:1px solid var(--border-md);border-radius:var(--radius);box-shadow:0 4px 24px rgba(0,0,0,.4),0 0 20px var(--gold-soft);transition:all .3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 32px rgba(0,0,0,.5),0 0 30px var(--gold-glow),0 0 50px var(--neon-blue-soft)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(0,0,0,.4),0 0 20px var(--gold-soft)';">
-        <img src="images/nvidia-digital-health.png" alt="NVIDIA Digital Health" style="width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));">
+        <img src="images/nvidia-digital-health.webp" alt="NVIDIA Digital Health" style="width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));" loading="lazy" decoding="async">
         <span style="font-size:12px;color:var(--text-1);font-weight:500;letter-spacing:.5px;">Digital Health</span>
       </div>
       <div style="display:flex;align-items:center;gap:16px;padding:20px 28px;background:linear-gradient(135deg,var(--surface) 0%,var(--deep) 100%);border:1px solid var(--border-md);border-radius:var(--radius);box-shadow:0 4px 24px rgba(0,0,0,.4),0 0 20px var(--gold-soft);transition:all .3s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 8px 32px rgba(0,0,0,.5),0 0 30px var(--gold-glow),0 0 50px var(--neon-blue-soft)';" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(0,0,0,.4),0 0 20px var(--gold-soft)';">
-        <img src="images/google-premium-developer.png" alt="Google Premium" style="width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));">
+        <img src="images/google-premium-developer.webp" alt="Google Premium" style="width:56px;height:56px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));" loading="lazy" decoding="async">
         <span style="font-size:12px;color:var(--text-1);font-weight:500;letter-spacing:.5px;">Google Premium</span>
       </div>
     </div>
@@ -2500,7 +2517,7 @@ html,body{overflow-x:hidden;}
     <div class="section-inner">
       <div class="footer-top">
         <div>
-          <img src="images/quaasx_logo.png" alt="QuaasX 108 Logo" class="footer-logo">
+          <img src="images/quaasx_logo.webp" alt="QuaasX 108 Logo" class="footer-logo" loading="lazy" decoding="async">
           <div class="footer-brand-name">QuaasX 108</div>
           <div class="footer-brand-sub">Private Limited · DPIIT Certified Startup</div>
           <div class="footer-brand-desc">Restoring the world's first surgical science with artificial intelligence. Founder: Dr. Shivakumara.</div>
@@ -2661,7 +2678,7 @@ html,body{overflow-x:hidden;}
   <footer role="contentinfo" aria-label="QuaasX 108 Footer">
     <div class="section-inner">
       <div class="footer-top">
-        <div><img src="images/quaasx_logo.png" alt="QuaasX 108 Logo" class="footer-logo"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited</div><div class="footer-brand-desc">Manthana — Cosmic Medical Intelligence</div></div>
+        <div><img src="images/quaasx_logo.webp" alt="QuaasX 108 Logo" class="footer-logo" loading="lazy" decoding="async"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited</div><div class="footer-brand-desc">Manthana — Cosmic Medical Intelligence</div></div>
         <div><div class="footer-col-head">Products</div><ul class="footer-links"><li><button onclick="showPage('manthana')">Manthana</button></li><li><button onclick="showPage('medtrace')">MedTrace</button></li><li><button onclick="showPage('shalyamitra')">ShalyaMitra</button></li></ul></div>
         <div><div class="footer-col-head">Platform</div><ul class="footer-links"><li><a href="#">Oracle</a></li><li><a href="#">Labs</a></li><li><a href="#">M5 Mode</a></li><li><a href="#">Deep Research</a></li></ul></div>
         <div><div class="footer-col-head">Company</div><ul class="footer-links"><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('about')">About</button></li><li><a href="mailto:info@quaasx108.com">Contact</a></li></ul></div>
@@ -2739,7 +2756,7 @@ html,body{overflow-x:hidden;}
   </section>
 
   <div class="cosmic-divider" style="position:relative;z-index:1;"><div class="cdl"></div><div class="cds">⬡</div><div class="cdl"></div></div>
-  <footer role="contentinfo" aria-label="QuaasX 108 Footer"><div class="section-inner"><div class="footer-top"><div><img src="images/quaasx_logo.png" alt="QuaasX 108 Logo" class="footer-logo"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited</div><div class="footer-brand-desc">MedTrace — Pharmacological Intelligence with Depth You Can Trace</div></div><div><div class="footer-col-head">Products</div><ul class="footer-links"><li><button onclick="showPage('manthana')">Manthana</button></li><li><button onclick="showPage('medtrace')">MedTrace</button></li><li><button onclick="showPage('shalyamitra')">ShalyaMitra</button></li></ul></div><div><div class="footer-col-head">Company</div><ul class="footer-links"><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('about')">About</button></li><li><a href="mailto:info@quaasx108.com">Contact</a></li></ul></div><div><div class="footer-col-head">Legal</div><ul class="footer-links"><li><a href="#">Medical Disclaimer</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 QuaasX 108 Private Limited · MedTrace is for educational and reference use. Not a prescribing tool or substitute for clinical judgment.</div></div></div></footer>
+  <footer role="contentinfo" aria-label="QuaasX 108 Footer"><div class="section-inner"><div class="footer-top"><div><img src="images/quaasx_logo.webp" alt="QuaasX 108 Logo" class="footer-logo" loading="lazy" decoding="async"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited</div><div class="footer-brand-desc">MedTrace — Pharmacological Intelligence with Depth You Can Trace</div></div><div><div class="footer-col-head">Products</div><ul class="footer-links"><li><button onclick="showPage('manthana')">Manthana</button></li><li><button onclick="showPage('medtrace')">MedTrace</button></li><li><button onclick="showPage('shalyamitra')">ShalyaMitra</button></li></ul></div><div><div class="footer-col-head">Company</div><ul class="footer-links"><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('about')">About</button></li><li><a href="mailto:info@quaasx108.com">Contact</a></li></ul></div><div><div class="footer-col-head">Legal</div><ul class="footer-links"><li><a href="#">Medical Disclaimer</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 QuaasX 108 Private Limited · MedTrace is for educational and reference use. Not a prescribing tool or substitute for clinical judgment.</div></div></div></footer>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -2842,7 +2859,7 @@ html,body{overflow-x:hidden;}
   </section>
 
   <div class="cosmic-divider" style="position:relative;z-index:1;"><div class="cdl"></div><div class="cds">⬡</div><div class="cdl"></div></div>
-  <footer role="contentinfo" aria-label="QuaasX 108 Footer"><div class="section-inner"><div class="footer-top"><div><img src="images/quaasx_logo.png" alt="QuaasX 108 Logo" class="footer-logo"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited</div><div class="footer-brand-desc">ShalyaMitra — Unified Surgical Intelligence</div></div><div><div class="footer-col-head">Products</div><ul class="footer-links"><li><button onclick="showPage('manthana')">Manthana</button></li><li><button onclick="showPage('medtrace')">MedTrace</button></li><li><button onclick="showPage('shalyamitra')">ShalyaMitra</button></li></ul></div><div><div class="footer-col-head">Company</div><ul class="footer-links"><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('about')">About</button></li><li><a href="mailto:info@quaasx108.com">Contact</a></li></ul></div><div><div class="footer-col-head">Legal</div><ul class="footer-links"><li><a href="#">Medical Disclaimer</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 QuaasX 108 Private Limited · ShalyaMitra is a decision-support and education tool. Not a substitute for licensed clinical judgment or emergency care.</div></div></div></footer>
+  <footer role="contentinfo" aria-label="QuaasX 108 Footer"><div class="section-inner"><div class="footer-top"><div><img src="images/quaasx_logo.webp" alt="QuaasX 108 Logo" class="footer-logo" loading="lazy" decoding="async"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited</div><div class="footer-brand-desc">ShalyaMitra — Unified Surgical Intelligence</div></div><div><div class="footer-col-head">Products</div><ul class="footer-links"><li><button onclick="showPage('manthana')">Manthana</button></li><li><button onclick="showPage('medtrace')">MedTrace</button></li><li><button onclick="showPage('shalyamitra')">ShalyaMitra</button></li></ul></div><div><div class="footer-col-head">Company</div><ul class="footer-links"><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('about')">About</button></li><li><a href="mailto:info@quaasx108.com">Contact</a></li></ul></div><div><div class="footer-col-head">Legal</div><ul class="footer-links"><li><a href="#">Medical Disclaimer</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 QuaasX 108 Private Limited · ShalyaMitra is a decision-support and education tool. Not a substitute for licensed clinical judgment or emergency care.</div></div></div></footer>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -3142,7 +3159,7 @@ html,body{overflow-x:hidden;}
   </section>
 
   <div class="cosmic-divider" style="position:relative;z-index:1;"><div class="cdl"></div><div class="cds">⬡</div><div class="cdl"></div></div>
-  <footer role="contentinfo" aria-label="QuaasX 108 Footer"><div class="section-inner"><div class="footer-top"><div><img src="images/quaasx_logo.png" alt="QuaasX 108 Logo" class="footer-logo"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited</div><div class="footer-brand-desc">Quantum Ayurvedic AI Biofield Systems — Restoring health at the quantum cellular level</div></div><div><div class="footer-col-head">Products</div><ul class="footer-links"><li><button onclick="showPage('manthana')">Manthana</button></li><li><button onclick="showPage('medtrace')">MedTrace</button></li><li><button onclick="showPage('shalyamitra')">ShalyaMitra</button></li><li><button onclick="showPage('quantum')">Quantum Devices</button></li></ul></div><div><div class="footer-col-head">Company</div><ul class="footer-links"><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('about')">About</button></li><li><a href="mailto:info@quaasx108.com">Contact</a></li></ul></div><div><div class="footer-col-head">Legal</div><ul class="footer-links"><li><a href="#">Medical Disclaimer</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 QuaasX 108 Private Limited · Quantum Medical Devices are wellness tools. Not a substitute for licensed medical care or emergency treatment.</div></div></div></footer>
+  <footer role="contentinfo" aria-label="QuaasX 108 Footer"><div class="section-inner"><div class="footer-top"><div><img src="images/quaasx_logo.webp" alt="QuaasX 108 Logo" class="footer-logo" loading="lazy" decoding="async"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited</div><div class="footer-brand-desc">Quantum Ayurvedic AI Biofield Systems — Restoring health at the quantum cellular level</div></div><div><div class="footer-col-head">Products</div><ul class="footer-links"><li><button onclick="showPage('manthana')">Manthana</button></li><li><button onclick="showPage('medtrace')">MedTrace</button></li><li><button onclick="showPage('shalyamitra')">ShalyaMitra</button></li><li><button onclick="showPage('quantum')">Quantum Devices</button></li></ul></div><div><div class="footer-col-head">Company</div><ul class="footer-links"><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('about')">About</button></li><li><a href="mailto:info@quaasx108.com">Contact</a></li></ul></div><div><div class="footer-col-head">Legal</div><ul class="footer-links"><li><a href="#">Medical Disclaimer</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 QuaasX 108 Private Limited · Quantum Medical Devices are wellness tools. Not a substitute for licensed medical care or emergency treatment.</div></div></div></footer>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -3321,7 +3338,7 @@ html,body{overflow-x:hidden;}
   </section>
 
   <div class="cosmic-divider" style="position:relative;z-index:1;"><div class="cdl"></div><div class="cds"></div><div class="cdl"></div></div>
-  <footer role="contentinfo" aria-label="QuaasX 108 Footer"><div class="section-inner"><div class="footer-top"><div><img src="images/quaasx_logo.png" alt="QuaasX 108 Logo" class="footer-logo"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited · DPIIT Certified</div><div class="footer-brand-desc">Phase 1: World's First AI-Assisted Ayurvedic Surgical Intelligence in Shalya Tantra</div></div><div><div class="footer-col-head">Products</div><ul class="footer-links"><li><button onclick="showPage('manthana')">Manthana</button></li><li><button onclick="showPage('medtrace')">MedTrace</button></li><li><button onclick="showPage('shalyamitra')">ShalyaMitra</button></li></ul></div><div><div class="footer-col-head">Event</div><ul class="footer-links"><li><a href="mailto:info@quaasx108.com?subject=Phase-1 Event Registration">Register Free</a></li><li><a href="mailto:info@quaasx108.com">General Inquiry</a></li></ul></div><div><div class="footer-col-head">Company</div><ul class="footer-links"><li><button onclick="showPage('about')">About Us</button></li><li><a href="mailto:info@quaasx108.com">Contact</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 QuaasX 108 Private Limited · info@quaasx108.com</div></div></div></footer>
+  <footer role="contentinfo" aria-label="QuaasX 108 Footer"><div class="section-inner"><div class="footer-top"><div><img src="images/quaasx_logo.webp" alt="QuaasX 108 Logo" class="footer-logo" loading="lazy" decoding="async"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited · DPIIT Certified</div><div class="footer-brand-desc">Phase 1: World's First AI-Assisted Ayurvedic Surgical Intelligence in Shalya Tantra</div></div><div><div class="footer-col-head">Products</div><ul class="footer-links"><li><button onclick="showPage('manthana')">Manthana</button></li><li><button onclick="showPage('medtrace')">MedTrace</button></li><li><button onclick="showPage('shalyamitra')">ShalyaMitra</button></li></ul></div><div><div class="footer-col-head">Event</div><ul class="footer-links"><li><a href="mailto:info@quaasx108.com?subject=Phase-1 Event Registration">Register Free</a></li><li><a href="mailto:info@quaasx108.com">General Inquiry</a></li></ul></div><div><div class="footer-col-head">Company</div><ul class="footer-links"><li><button onclick="showPage('about')">About Us</button></li><li><a href="mailto:info@quaasx108.com">Contact</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 QuaasX 108 Private Limited · info@quaasx108.com</div></div></div></footer>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -3341,22 +3358,22 @@ html,body{overflow-x:hidden;}
       <h2 class="gradient-heading reveal d1">Certified by the Best.</h2>
       <div class="accreditations">
         <div class="accred-card reveal d1" style="transition:all .3s ease;" onmouseover="this.style.transform='translateY(-6px) scale(1.02)';" onmouseout="this.style.transform='translateY(0) scale(1)';">
-          <div class="accred-icon" style="margin-bottom:20px;"><img src="images/dpiit.png" alt="DPIIT Certified" style="width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));"></div>
+          <div class="accred-icon" style="margin-bottom:20px;"><img src="images/dpiit.webp" alt="DPIIT Certified" style="width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));" loading="lazy" decoding="async"></div>
           <div class="accred-name">DPIIT Certified</div>
           <div class="accred-sub">Department for Promotion of Industry and Internal Trade — Recognised Startup</div>
         </div>
         <div class="accred-card reveal d2" style="transition:all .3s ease;" onmouseover="this.style.transform='translateY(-6px) scale(1.02)';" onmouseout="this.style.transform='translateY(0) scale(1)';">
-          <div class="accred-icon" style="margin-bottom:20px;"><img src="images/download.png" alt="NVIDIA Inception" style="width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));"></div>
+          <div class="accred-icon" style="margin-bottom:20px;"><img src="images/download.webp" alt="NVIDIA Inception" style="width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));" loading="lazy" decoding="async"></div>
           <div class="accred-name">NVIDIA Inception</div>
           <div class="accred-sub">NVIDIA Inception Program — AI Startup Accelerator</div>
         </div>
         <div class="accred-card reveal d3" style="transition:all .3s ease;" onmouseover="this.style.transform='translateY(-6px) scale(1.02)';" onmouseout="this.style.transform='translateY(0) scale(1)';">
-          <div class="accred-icon" style="margin-bottom:20px;"><img src="images/nvidia-digital-health.png" alt="NVIDIA Digital Health" style="width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));"></div>
+          <div class="accred-icon" style="margin-bottom:20px;"><img src="images/nvidia-digital-health.webp" alt="NVIDIA Digital Health" style="width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));" loading="lazy" decoding="async"></div>
           <div class="accred-name">Digital Health</div>
           <div class="accred-sub">NVIDIA Digital Health Developers Program</div>
         </div>
         <div class="accred-card reveal d4" style="transition:all .3s ease;" onmouseover="this.style.transform='translateY(-6px) scale(1.02)';" onmouseout="this.style.transform='translateY(0) scale(1)';">
-          <div class="accred-icon" style="margin-bottom:20px;"><img src="images/google-premium-developer.png" alt="Google Premium Developer" style="width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));"></div>
+          <div class="accred-icon" style="margin-bottom:20px;"><img src="images/google-premium-developer.webp" alt="Google Premium Developer" style="width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4));" loading="lazy" decoding="async"></div>
           <div class="accred-name">Google Premium</div>
           <div class="accred-sub">Google Premium Developer Badge</div>
         </div>
@@ -3403,7 +3420,7 @@ html,body{overflow-x:hidden;}
   </section>
 
   <div class="cosmic-divider" style="position:relative;z-index:1;"><div class="cdl"></div><div class="cds">॰</div><div class="cdl"></div></div>
-  <footer role="contentinfo" aria-label="QuaasX 108 Footer"><div class="section-inner"><div class="footer-top"><div><img src="images/quaasx_logo.png" alt="QuaasX 108 Logo" class="footer-logo"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited · DPIIT Certified · NVIDIA Inception</div><div class="footer-brand-desc">Restoring the world's first surgical science with artificial intelligence.</div></div><div><div class="footer-col-head">Products</div><ul class="footer-links"><li><button onclick="showPage('manthana')">Manthana</button></li><li><button onclick="showPage('medtrace')">MedTrace</button></li><li><button onclick="showPage('shalyamitra')">ShalyaMitra</button></li></ul></div><div><div class="footer-col-head">Company</div><ul class="footer-links"><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('phase1')">Phase-1 Event</button></li><li><a href="mailto:info@quaasx108.com">Contact</a></li></ul></div><div><div class="footer-col-head">Contact</div><ul class="footer-links"><li><a href="mailto:info@quaasx108.com">info@quaasx108.com</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 QuaasX 108 Private Limited · QuaasX AI · Med Vision v2 · Zero AI · मन्थन</div><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Medical Disclaimer</a></div></div></div></footer>
+  <footer role="contentinfo" aria-label="QuaasX 108 Footer"><div class="section-inner"><div class="footer-top"><div><img src="images/quaasx_logo.webp" alt="QuaasX 108 Logo" class="footer-logo" loading="lazy" decoding="async"><div class="footer-brand-name">QuaasX 108</div><div class="footer-brand-sub">Private Limited · DPIIT Certified · NVIDIA Inception</div><div class="footer-brand-desc">Restoring the world's first surgical science with artificial intelligence.</div></div><div><div class="footer-col-head">Products</div><ul class="footer-links"><li><button onclick="showPage('manthana')">Manthana</button></li><li><button onclick="showPage('medtrace')">MedTrace</button></li><li><button onclick="showPage('shalyamitra')">ShalyaMitra</button></li></ul></div><div><div class="footer-col-head">Company</div><ul class="footer-links"><li><button onclick="showPage('home')">Home</button></li><li><button onclick="showPage('phase1')">Phase-1 Event</button></li><li><a href="mailto:info@quaasx108.com">Contact</a></li></ul></div><div><div class="footer-col-head">Contact</div><ul class="footer-links"><li><a href="mailto:info@quaasx108.com">info@quaasx108.com</a></li></ul></div></div><div class="footer-bottom"><div class="footer-copy">© 2025 QuaasX 108 Private Limited · QuaasX AI · Med Vision v2 · Zero AI · मन्थन</div><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Medical Disclaimer</a></div></div></div></footer>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════
@@ -3740,7 +3757,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </style>
 <div class="qx-lightbox" id="qxLightbox" onclick="qxCloseLightbox(event)">
   <div class="qx-lightbox-close" onclick="qxCloseLightbox(event)">×</div>
-  <img id="qxLightboxImg" alt="">
+  <img id="qxLightboxImg" alt="" loading="lazy" decoding="async">
   <div class="qx-lightbox-cap" id="qxLightboxCap"></div>
 </div>
 <div class="qx-img-warn" id="qxImgWarn"></div>
