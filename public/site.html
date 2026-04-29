@@ -3724,5 +3724,95 @@ document.addEventListener('DOMContentLoaded', () => {
 <meta itemprop="dateModified" content="2026-04-15">
 <time datetime="2026-04-15" style="display:none;">April 15, 2026</time>
 
+<!-- ============ IMAGE PREVIEW LIGHTBOX + ALT/BROKEN CHECKS ============ -->
+<style>
+  .qx-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:99999;backdrop-filter:blur(8px);cursor:zoom-out;animation:qxFade .25s ease;}
+  .qx-lightbox.active{display:flex;}
+  .qx-lightbox img{max-width:92vw;max-height:88vh;object-fit:contain;border-radius:12px;box-shadow:0 20px 80px rgba(0,0,0,.8),0 0 60px rgba(255,215,0,.15);animation:qxZoom .3s ease;}
+  .qx-lightbox-cap{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:#e8e8e8;font-size:13px;letter-spacing:.5px;background:rgba(0,0,0,.6);padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.1);}
+  .qx-lightbox-close{position:absolute;top:20px;right:24px;color:#fff;font-size:32px;background:rgba(0,0,0,.5);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.15);cursor:pointer;}
+  @keyframes qxFade{from{opacity:0}to{opacity:1}}
+  @keyframes qxZoom{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
+  img[data-qx-zoomable]{cursor:zoom-in;transition:filter .2s ease;}
+  img[data-qx-zoomable]:hover{filter:brightness(1.08);}
+  img[data-qx-broken]{outline:2px dashed #ff5577;outline-offset:2px;}
+  .qx-img-warn{position:fixed;bottom:16px;right:16px;background:rgba(20,20,20,.95);border:1px solid rgba(255,215,0,.3);color:#ffd76b;font:12px/1.5 system-ui,sans-serif;padding:10px 14px;border-radius:10px;max-width:340px;z-index:99998;box-shadow:0 8px 32px rgba(0,0,0,.5);display:none;}
+</style>
+<div class="qx-lightbox" id="qxLightbox" onclick="qxCloseLightbox(event)">
+  <div class="qx-lightbox-close" onclick="qxCloseLightbox(event)">×</div>
+  <img id="qxLightboxImg" alt="">
+  <div class="qx-lightbox-cap" id="qxLightboxCap"></div>
+</div>
+<div class="qx-img-warn" id="qxImgWarn"></div>
+<script>
+(function(){
+  function openLightbox(src, caption){
+    var lb = document.getElementById('qxLightbox');
+    var im = document.getElementById('qxLightboxImg');
+    var cp = document.getElementById('qxLightboxCap');
+    im.src = src; im.alt = caption || '';
+    cp.textContent = caption || '';
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  window.qxCloseLightbox = function(e){
+    if(e && e.target && e.target.tagName === 'IMG' && e.target.id === 'qxLightboxImg') return;
+    document.getElementById('qxLightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.qxCloseLightbox(); });
+
+  function audit(){
+    var imgs = document.querySelectorAll('img');
+    var missingAlt = [], broken = [];
+    imgs.forEach(function(img){
+      // skip lightbox img
+      if(img.id === 'qxLightboxImg') return;
+      // alt check
+      if(!img.hasAttribute('alt') || img.getAttribute('alt').trim() === ''){
+        missingAlt.push(img.src || img.getAttribute('data-src') || '(no src)');
+        img.setAttribute('alt', 'Image');
+      }
+      // broken check
+      var markBroken = function(){
+        broken.push(img.src);
+        img.setAttribute('data-qx-broken','1');
+        console.warn('[QX image audit] Broken image:', img.src);
+      };
+      if(img.complete && img.naturalWidth === 0){ markBroken(); }
+      else { img.addEventListener('error', markBroken, {once:true}); }
+      // make zoomable (skip tiny icons < 32px and decorative)
+      var w = img.getAttribute('width');
+      if(!img.hasAttribute('data-qx-no-zoom')){
+        img.setAttribute('data-qx-zoomable','1');
+        img.addEventListener('click', function(ev){
+          ev.stopPropagation();
+          openLightbox(img.currentSrc || img.src, img.alt);
+        });
+      }
+    });
+    if(missingAlt.length || broken.length){
+      console.group('%c[QX Image Audit]','color:#ffd76b;font-weight:bold;');
+      if(missingAlt.length) console.warn('Missing alt text on', missingAlt.length, 'image(s):', missingAlt);
+      if(broken.length) console.warn('Broken images:', broken);
+      console.groupEnd();
+      // dev-only on-screen warn for localhost / preview
+      if(/localhost|lovable\.app/.test(location.hostname)){
+        var w = document.getElementById('qxImgWarn');
+        var msg = [];
+        if(broken.length) msg.push('⚠ '+broken.length+' broken image(s)');
+        if(missingAlt.length) msg.push('ℹ '+missingAlt.length+' missing alt (auto-filled)');
+        w.textContent = msg.join(' · ');
+        w.style.display = 'block';
+        setTimeout(function(){ w.style.opacity='0'; w.style.transition='opacity 1s'; setTimeout(function(){w.style.display='none';w.style.opacity='1';},1000); }, 6000);
+      }
+    } else {
+      console.log('%c[QX Image Audit] All images OK ✓','color:#7CFFB2');
+    }
+  }
+  if(document.readyState === 'complete') setTimeout(audit, 300);
+  else window.addEventListener('load', function(){ setTimeout(audit, 300); });
+})();
+</script>
 </body>
 </html>
