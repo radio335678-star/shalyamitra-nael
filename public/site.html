@@ -1933,7 +1933,9 @@ img { image-rendering: -webkit-optimize-contrast; }
 /* Avoid layout shift on lazy media */
 img[loading="lazy"]{background:rgba(255,255,255,.02)}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior-y:none}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior-y:auto;overflow-x:hidden}
+html{overflow-y:auto}
+body{overflow-y:auto}
 </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
@@ -3773,11 +3775,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
   }
   window.qxCloseLightbox = function(e){
-    if(e && e.target && e.target.tagName === 'IMG' && e.target.id === 'qxLightboxImg') return;
+    // Close on ANY click inside the lightbox (image, backdrop, close button)
     document.getElementById('qxLightbox').classList.remove('active');
     document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
   };
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape') window.qxCloseLightbox(); });
+  // Safety net: if lightbox is not active but body is locked, unlock it
+  setInterval(function(){
+    var lb = document.getElementById('qxLightbox');
+    var navOpen = document.getElementById('main-nav') && document.getElementById('main-nav').classList.contains('nav-mobile-open');
+    if(lb && !lb.classList.contains('active') && !navOpen && document.body.style.overflow === 'hidden'){
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+  }, 1000);
 
   function audit(){
     var imgs = document.querySelectorAll('img');
