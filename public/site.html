@@ -1933,7 +1933,9 @@ img { image-rendering: -webkit-optimize-contrast; }
 /* Avoid layout shift on lazy media */
 img[loading="lazy"]{background:rgba(255,255,255,.02)}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior-y:none}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior-y:auto;overflow-x:hidden;overflow-y:auto !important}
+html{overflow-y:auto !important}
+body.nav-locked{overflow:hidden !important}
 </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
