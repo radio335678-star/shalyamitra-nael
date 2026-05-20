@@ -300,7 +300,8 @@
 }
 </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700;900&family=Outfit:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700&family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700&family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap"></noscript>
 <style>
 /* ═══════════════════════════════════════════════════════
    DESIGN SYSTEM
@@ -1918,24 +1919,30 @@ html,body{overflow-x:hidden;}
   .count-label{font-size:9px;}
 }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link rel="preload" as="image" href="/images/quaasx_logo.webp" fetchpriority="high">
 <meta name="format-detection" content="telephone=no">
 <style>
 /* Performance: contain offscreen sections + smooth GPU compositing */
 section, .section, footer { content-visibility: auto; contain-intrinsic-size: 1px 800px; }
 img { image-rendering: -webkit-optimize-contrast; }
+img[loading="lazy"]{background:rgba(255,255,255,.02)}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-y:auto}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior-y:auto;overflow-x:hidden;overflow-y:auto}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
 }
-/* Avoid layout shift on lazy media */
-img[loading="lazy"]{background:rgba(255,255,255,.02)}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overscroll-behavior-y:auto;overflow-x:hidden}
-html{overflow-y:auto}
-body{overflow-y:auto}
+/* Mobile: kill expensive paint effects (backdrop-filter, drop-shadow, multi-layer gradients) */
+@media (max-width: 768px){
+  .star-field{display:none!important}
+  .ambient::before{background:radial-gradient(ellipse 80% 60% at 50% 30%, rgba(255,215,0,0.05) 0%, transparent 70%)!important}
+  *{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  img{filter:none!important}
+  .nav-logo,.footer-logo{filter:none!important}
+  /* Reduce animation cost */
+  .reveal{transition:opacity .3s ease!important;transform:none!important}
+}
+/* Decode images off the main thread; promote heavy hero to its own layer once */
+.hero-logo,.nav-logo{contain:layout paint;transform:translateZ(0)}
 </style>
 </head>
 <body itemscope itemtype="https://schema.org/WebPage">
