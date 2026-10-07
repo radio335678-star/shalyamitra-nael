@@ -609,6 +609,9 @@ Crawl-delay: 10
 # Primary Sitemap
 Sitemap: https://quaasx108.com/sitemap.xml
 
+# ShalyaMitra canonical host (shalya.quaasx108.com deployment)
+Sitemap: https://shalya.quaasx108.com/sitemap.xml
+
 # Host Directive (Yandex / International SEO)
 Host: https://quaasx108.com
 

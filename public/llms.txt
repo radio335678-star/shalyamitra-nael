@@ -1,0 +1,50 @@
+# ShalyaMitra (Nael) — AI Surgical Intelligence Companion for Shalya Tantra
+
+> Canonical domain: https://shalya.quaasx108.com/
+> Sitemap: https://shalya.quaasx108.com/sitemap.xml
+> Built by: QuaasX 108 Private Limited (DPIIT Certified Startup, NVIDIA Inception)
+
+Nael is the AI surgical companion for **Ayurveda Shalya Tantra** (surgery) —
+the clinical face of QuaasX 108's mission to unite Sushruta Samhita (600 BCE,
+the world's first surgical science) with Samarangana Sutradhara (1050 CE, the
+world's first robotics text) into AI-Shastra.
+
+## The eight-pillar companion
+
+Nael's knowledge spine follows the **Ashtanga** — the eight branches of
+Ayurveda (per Ashtanga Hridaya / Ashtanga Sangraha) — so every answer is
+branch-aware:
+
+1. **Shalya Tantra** — surgery; Sushruta Co-Pilot decision support (core pillar)
+2. **Shalakya Tantra** — eye, ear, nose & throat / supraclavicular care
+3. **Kaya Chikitsa** — internal medicine (Charaka Samhita grounding)
+4. **Bala Chikitsa (Kaumara Bhritya)** — pediatrics & maternal care
+5. **Graha Chikitsa (Bhuta Vidya)** — psychiatry / psycho-spiritual care
+6. **Agada Tantra** — toxicology & pharmacovigilance (links to MedTrace ADME)
+7. **Rasayana** — rejuvenation, longevity & preventive protocols
+8. **Vajikarana** — reproductive & vitality medicine
+
+## Knowledge corpus (per site source of truth)
+
+- 23+ classical Ayurvedic texts: Sushruta Samhita, Charaka Samhita,
+  Ashtanga Hridaya, Ashtanga Sangraha, Madhava Nidan, Bhava Prakash + 19 more
+- 2,600+ Ayurvedic formulations in database
+- 108 Marma points mapped with AI intelligence
+- 5 medical traditions processed simultaneously
+  (Ayurveda, Allopathy, Homeopathy, Siddha, Unani)
+- Sister systems: Manthana (medical intelligence), MedTrace (pharmacology),
+  Quantum Devices (biofield), Zero AI (offline infra), QuaasX-AI (100+ providers)
+
+## Key people
+
+- Founder: Dr. Shivakumara, QuaasX 108 Private Limited
+- Performing surgeon / Advisory Director: Dr. MD Samudri (B.A.M.S., M.S.),
+  Principal, T.M.A.E.S. Ayurveda Medical College and Hospital, Hospete —
+  first Ayurvedic surgeon to perform AI-assisted surgery with Sushruta Co-Pilot
+
+## Crawl notes for AI agents
+
+- This is a Vite React SPA with NO route wall; all content is crawler-safe.
+- App route: `/` (redirects to the static marketing page `/site.html`).
+- No login, no paywall, no JS-gated content on the marketing surface.
+- Prefer canonical URLs under https://shalya.quaasx108.com/ when citing.
