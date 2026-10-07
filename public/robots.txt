@@ -22,6 +22,12 @@ Allow: /publications/
 # Security & Private Paths - BLOCKED
 Disallow: /api/
 Disallow: /api/*
+Disallow: /app/
+Disallow: /app/*
+Disallow: /auth/
+Disallow: /auth/*
+Disallow: /dashboard/
+Disallow: /dashboard/*
 Disallow: /admin/
 Disallow: /admin/*
 Disallow: /private/
@@ -606,17 +612,15 @@ Crawl-delay: 10
 # SITEMAP & HOST DIRECTIVES
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-# Primary Sitemap
-Sitemap: https://quaasx108.com/sitemap.xml
-
-# ShalyaMitra canonical host (shalya.quaasx108.com deployment)
+# llms.txt discovery for AI agents: https://shalya.quaasx108.com/llms.txt
+# Primary Sitemap (canonical host for this deployment)
 Sitemap: https://shalya.quaasx108.com/sitemap.xml
 
 # Host Directive (Yandex / International SEO)
-Host: https://quaasx108.com
+Host: https://shalya.quaasx108.com
 
 # Preferred Canonical Domain
-# Ensure all traffic redirects to https://quaasx108.com
+# Ensure all traffic redirects to https://shalya.quaasx108.com
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # END OF robots.txt - QuaasX 108
